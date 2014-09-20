@@ -1,0 +1,2 @@
+class DisruptionController < ApplicationController
+end
