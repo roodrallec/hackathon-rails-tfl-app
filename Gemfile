@@ -37,6 +37,11 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'sidekiq'
+gem 'sidetiq'
+gem 'nokogiri'
+gem 'bootstrap-sass'
+gem 'patron'
 
 group :development, :test do
   gem 'rspec-rails'
