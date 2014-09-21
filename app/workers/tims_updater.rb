@@ -2,16 +2,17 @@ require 'open-uri'
 class TimsUpdater
   include Sidekiq::Worker
   include Sidetiq::Schedulable
-  @@url = "http://data.tfl.gov.uk/tfl/syndication/feeds/tims_feed.xml?app_id=5ab7117a&app_key=e975ed062b4650c6b17c180fd02712db"
- 
+
   recurrence { hourly }
+
+  @@url = "http://data.tfl.gov.uk/tfl/syndication/feeds/tims_feed.xml?app_id=5ab7117a&app_key=e975ed062b4650c6b17c180fd02712db"
 
   def perform
     puts "Updating TIMS"
-    update
+    update(@@url)
   end
-  def update
-    doc = Nokogiri::XML(open(@@url)).remove_namespaces!
+  def update(url)
+    doc = Nokogiri::XML(open(url)).remove_namespaces!
     doc.xpath("//Disruption").each do |disruption|
       disruption_hash = {
       did: disruption.attr("id"),
@@ -23,7 +24,7 @@ class TimsUpdater
 #     endTime
       location: disruption.at_xpath("location").text,
 #     corridor string
-#     comments: disruption.at_xpath("comments").text,
+      comments: disruption.at_xpath("comments").text,
 #     currentUpdate string
 #     remarkTime dateTime
       lastModTime:  disruption.at_xpath("lastModTime").text,

@@ -40,6 +40,8 @@ gem 'spring',        group: :development
 gem 'sidekiq'
 gem 'sidetiq'
 gem 'redis'
+#For sidekiq web interface
+gem 'sinatra', '>=1.3.0', :require => nil
 
 #XML parser
 gem 'nokogiri'

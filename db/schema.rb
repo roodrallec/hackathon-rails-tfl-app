@@ -11,23 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140919225104) do
+ActiveRecord::Schema.define(version: 20140921130816) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "disruptions", force: true do |t|
-    t.integer "did"
-    t.string  "status"
-    t.string  "severity"
-    t.string  "interestLevel"
-    t.string  "category"
-    t.string  "startTime"
-    t.string  "location"
-    t.string  "comments"
-    t.string  "lastModTime"
-    t.string  "coordinatesEN"
-    t.string  "coordinatesLL"
+    t.integer  "did"
+    t.string   "status"
+    t.string   "severity"
+    t.string   "interestLevel"
+    t.string   "category"
+    t.string   "location"
+    t.string   "coordinatesEN"
+    t.string   "coordinatesLL"
+    t.text     "comments"
+    t.datetime "startTime"
+    t.datetime "lastModTime"
   end
 
 end

@@ -1,3 +1,4 @@
+TimsUpdater.perform_async
 class DisruptionsController < ApplicationController
   def index #list all disruptions
     @disruptions = Disruption.all

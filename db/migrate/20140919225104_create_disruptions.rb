@@ -6,14 +6,14 @@ class CreateDisruptions < ActiveRecord::Migration
       t.string :severity
       t.string :interestLevel
       t.string :category
-      t.string :startTime
+      t.datetime :startTime
 #     t.string :endTime		  optional
       t.string :location
 #     t.string :corridor	  optional
-      t.string :comments
+      t.text :comments
 #     t.string :currentUpdate	  optional
 #     t.string :remarkTime	  optional
-      t.string :lastModTime
+      t.datetime :lastModTime
       t.string :coordinatesEN	  #British National Grid coordinates
       t.string :coordinatesLL	  #Google Maps longitude, latitude coordinates
 #     t.string :streetName
