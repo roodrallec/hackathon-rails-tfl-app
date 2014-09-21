@@ -1,5 +1,5 @@
-TimsUpdater.perform_async
 class DisruptionsController < ApplicationController
+#TimsUpdater.perform_async
   def index #list all disruptions
     @disruptions = Disruption.all
     @hash = Gmaps4rails.build_markers(@disruptions) do |disruption, marker|

@@ -2,6 +2,7 @@ require 'open-uri'
 class TimsUpdater
   include Sidekiq::Worker
   include Sidetiq::Schedulable
+  sidekiq_options :retry => false
 
   recurrence { hourly }
 
