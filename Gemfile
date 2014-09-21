@@ -1,6 +1,4 @@
 source 'https://rubygems.org'
-
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use postgresql as the database for Active Record
@@ -37,12 +35,25 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+#For scheduled background processes
 gem 'sidekiq'
 gem 'sidetiq'
+gem 'redis'
+
+#XML parser
 gem 'nokogiri'
+
+#Bootstrap integration
 gem 'bootstrap-sass'
+
+#HTML client
 gem 'patron'
 
+#Googlemap integration
+gem 'gmaps4rails'
+
+#Testing gems
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
