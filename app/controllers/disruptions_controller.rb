@@ -5,7 +5,7 @@ class DisruptionsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@disruptions) do |disruption, marker|
       marker.lng disruption.coordinatesLL.split(',')[0]
       marker.lat disruption.coordinatesLL.split(',')[1]
-      marker.infowindow	disruption.category
+      marker.infowindow	disruption.comments
 #     marker.picture({
 #      "url" => "/logo.png",
 #      "width" =>  32,

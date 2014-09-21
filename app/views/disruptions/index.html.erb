@@ -6,6 +6,7 @@
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
 <br>
+<%= link_to 'TIMS Monitoring', sidekiq_web_path %>
 <table>
   <tr>
     <th>ID</th>
@@ -33,7 +34,6 @@
   </tr>
 <% end %>
 </table>
-<%= link_to 'Monitoring', sidekiq_web_path %>
 <script type="text/javascript">
 handler = Gmaps.build('Google');
 handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
